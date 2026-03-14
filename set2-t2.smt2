@@ -1,0 +1,10 @@
+
+(assert (not (exists ((l1 Real) (l2 Real) (l3 Real) (l4 Real) (u1 Real) (u2 Real) (u3 Real) (u4 Real))
+  (and (exists ((e1 Real)) (and (< l1 e1) (and (< e1 u1) (and (< l2 e1) (< e1 u2))) ))
+   (and (exists ((e2 Real)) (and (< l2 e2) (and (< e2 u2) (and (< l3 e2) (< e2 u3))) ))
+    (and (exists ((e3 Real)) (and (< l1 e3) (and (< e3 u1) (and (< l4 e3) (< e3 u4))) )) 
+        (and (exists ((e4 Real)) (and (< l3 e4) (and (< e4 u3) (and (< l4 e4) (< e4 u4)))))
+            (and (not (exists ((e5 Real)) (and (< l2 e5) (and (< e5 u2) (and (< l4 e5) (< e5 u4))) )))
+                 (not (exists ((e6 Real)) (and (< l1 e6) (and (< e6 u1) (and (< l3 e6) (< e6 u3)
+                    )))))))))))))
+(check-sat)
